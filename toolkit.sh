@@ -9,7 +9,7 @@
 #Description: Toolkit to use cruft_remover and folder_organizer
 
 #Usage Information
-#Run ./toolkit.sh from this directory.
+#Run ./toolkit.sh from this directory. Select which tool you want (1/2) then follow the remaining prompts if any.
 
 PS3="Which script do you want to execute: "
 

@@ -9,16 +9,15 @@
 #Description: Removed crufts
 
 #Usage Information
-#Run ./cruft_remover.sh from this directory.
+#Run ./cruft_remover.sh from this directory. Then enter "./cruft" at the first prompt, and 0 at the second prompt.
 
 read -p "Which folder to remove cruft from?: " folder
 read -p "How many days of unmodified data should we remove?: " days
 
-# IFS=$'\0' read -d '' -a removable < <(find "$folder" -mtime "$days" -type f -print0)
-readarray removable < <(find "$folder" -mtime "-$days" -type f)
+readarray -t removable < <(find "$folder" -mtime "$days" -type f)
 
 for rem in "${removable[@]}"; do
-    # echo "$rem"
+    echo "$rem"
     rm -i "$rem"
 done
 
